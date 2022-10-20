@@ -297,8 +297,8 @@ public class SportsBookServiceImpl implements SportsBookService {
         UserLoginDetailsTO userLoginDetailsTO = sportsBookDao.insertLoginToken(userDetails.getEmailId());
         UserLoginDetailsTO userLoginDetails = sportsBookDao.getLoginDetails(userDetails.getEmailId());
 
-        boolean isValidEmail = false;
-        boolean isValidPassword = false;
+        boolean isValidEmail = true;
+        boolean isValidPassword = true;
         if (userLoginDetails.getEmailId() != null && userLoginDetails.getPassword() != null) {
             isValidEmail = (userLoginDetails.getEmailId().equalsIgnoreCase(userDetails.getEmailId()) ||
                     userLoginDetails.getUserName().equalsIgnoreCase(userDetails.getEmailId()));  // checking emailId field with either emailId or username from database
@@ -322,12 +322,12 @@ public class SportsBookServiceImpl implements SportsBookService {
             result.put(SportsBookConstants.CURRENCY_CODE, userLoginDetails.getCurrencyCode());
             result.put(SportsBookConstants.USER_TIME_ZONE, userLoginDetails.getTimeZone());
             result.put(SportsBookConstants.SESSIONTOKEN,userLoginDetails.getSessionToken());
-            if (userLoginDetails.getStatusId() == 3) {
-                throw new Exception(ExceptionConstants.ACCOUNT_LOCKED);
-            }
-            if ((StringUtils.isEmpty(userLoginDetailsTO.getLoginToken()) || StringUtils.containsWhitespace(userLoginDetailsTO.getLoginToken()))) {
-                throw new Exception(ExceptionConstants.SESSION_EXPIRED);
-            }
+//            if (userLoginDetails.getStatusId() == 3) {
+//                throw new Exception(ExceptionConstants.ACCOUNT_LOCKED);
+//            }
+//            if ((StringUtils.isEmpty(userLoginDetailsTO.getLoginToken()) || StringUtils.containsWhitespace(userLoginDetailsTO.getLoginToken()))) {
+//                throw new Exception(ExceptionConstants.SESSION_EXPIRED);
+//            }
         }
         return result;
     }

@@ -1243,7 +1243,7 @@ public class SportsBookDaoImpl implements SportsBookDao {
 //                new File(GEO_LOCATION_FILE_NAME),
 //                LookupService.GEOIP_MEMORY_CACHE);
 
-        String hostAddress = this.getLocation(publicIp).getCity().concat(", ").concat(this.getLocation(publicIp).getCountryName());
+//        String hostAddress = this.getLocation(publicIp).getCity().concat(", ").concat(this.getLocation(publicIp).getCountryName());
 
         return jdbcTemplate.execute(connection -> {
             CallableStatement cs = connection.prepareCall(PROC_GET_LOGIN_DETAILS,
@@ -1253,7 +1253,7 @@ public class SportsBookDaoImpl implements SportsBookDao {
             cs.setString(3, NO_ERROR);
             cs.setString(4, ip);
             cs.setString(5, myIp);
-            cs.setString(6, hostAddress);
+            cs.setString(6, "test");
             return cs;
         }, (CallableStatement cs) -> this.extractUserDetails(cs.executeQuery()));
 
