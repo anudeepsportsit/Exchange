@@ -812,7 +812,7 @@ public class SportsBookServiceImpl implements SportsBookService {
                         eventViewDetailsWrapper.getMatchOdd1Details().getHomeTeam(), eventViewDetailsWrapper.getMatchOdd1Details().getAwayTeam())));
 
         if(eventViewDetailsWrapper.getMatchOdd1Details().getOutcomeDetailsList().size() > 0) {
-            Collections.swap(eventViewDetailsWrapper.getMatchOdd1Details().getOutcomeDetailsList(), 1, 2);
+            Collections.swap(eventViewDetailsWrapper.getMatchOdd1Details().getOutcomeDetailsList(), 0, 1);
         }
     }
 
