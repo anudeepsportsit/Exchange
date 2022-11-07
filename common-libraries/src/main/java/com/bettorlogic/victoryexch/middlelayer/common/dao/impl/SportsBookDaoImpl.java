@@ -70,7 +70,7 @@ public class SportsBookDaoImpl implements SportsBookDao {
     private static final String PROC_GET_ONE_CLICK = "select * from get_one_click_coin_details(?)";
     private static final String PROC_GET_USER_PROFILE = "select * from get_user_profile(?)";
     private static final String PROC_GET_TRANSACTION_PROFIT_LOSS_EVENT_VIEW = "select * from get_accountstatement_profitloss_eventview(?,?,?,?,?,?)";
-    private static final String PROC_GET_TRANSACTION_DETAILS = "select * from get_accountstatement_profitloss_transactions(?,?,?,?,?,?,?)";
+    private static final String PROC_GET_TRANSACTION_DETAILS = "select * from get_accountstatement_profitloss_transactions(?,?,?,?,?,?,?) limit 500";
     private static final String PROC_GET_SPORTS_PROFIT_LOSS = "select * from get_sportwise_profit_loss(?,?,?)";
     private static final String PROC_GET_TRANSACTION_COUNT = "select * from get_acount_statements_profit_loss_count(?,?,?,?)";
     private static final String PROC_GET_BET_HISTORY_DETAILS = "select * from get_bet_history(?,?,?,?,?)";
