@@ -192,7 +192,7 @@ public class DownlineListDaoImpl implements DownlineListDao {
             downlineListDetailsWrapper.setBalance(rs.getDouble(ColumnLabelConstants.USER_BALANCE));
             downlineListDetailsWrapper.setTotalExposure(rs.getDouble(ColumnLabelConstants.TOTAL_EXPOSURE));
             downlineListDetailsWrapper.setTotalAvailableBalance(rs.getDouble(ColumnLabelConstants.TOTAL_AVAILABLE_BALANCE));
-            downlineListDetailsWrapper.setCreditLimmit(rs.getDouble(ColumnLabelConstants.CREDIT_LIMIT));
+            downlineListDetailsWrapper.setCreditLimmit(0.0);
         }
         return downlineListDetailsWrapper;
     }
