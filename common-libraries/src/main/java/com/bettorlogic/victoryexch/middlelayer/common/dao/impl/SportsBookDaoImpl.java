@@ -1316,7 +1316,7 @@ public class SportsBookDaoImpl implements SportsBookDao {
                 balanceDetailsTO.setExposure(rs.getDouble(ColumnLabelConstants.EXPOSURE));
                 balanceDetailsTO.setCurrencyId(rs.getInt(ColumnLabelConstants.CURRENCY_ID));
                 balanceDetailsTO.setCurrencyShortName(rs.getString(ColumnLabelConstants.CURRENCY_CODE));
-                balanceDetailsTO.setTimeZone(rs.getString(ColumnLabelConstants.TIMEZONE));
+                balanceDetailsTO.setTimeZone("");
             }
             return balanceDetailsTO;
         });
