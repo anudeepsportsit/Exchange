@@ -262,16 +262,17 @@ public class BankingDaoImpl implements BankingDao {
         while (rs.next()) {
             BankingUsersOutput successUserTrasaction=new BankingUsersOutput();
             BankingUsersOutput failureUserTrasaction=new BankingUsersOutput();
-            Boolean isSuccess=rs.getBoolean((AdminPanelColumnLabelConstants.IS_SUCCESS));
+//            Boolean isSuccess=rs.getBoolean((AdminPanelColumnLabelConstants.IS_SUCCESS));
+            Boolean isSuccess = true;
             if(isSuccess){
-                successUserTrasaction.setUserid(rs.getInt(AdminPanelColumnLabelConstants.USER_ID));
-                successUserTrasaction.setUserName(rs.getString(AdminPanelColumnLabelConstants.USER_NAME));
-                successUserTrasaction.setMessage(rs.getString(AdminPanelColumnLabelConstants.STATUS));
+//                successUserTrasaction.setUserid(rs.getInt(AdminPanelColumnLabelConstants.USER_ID));
+//                successUserTrasaction.setUserName(rs.getString(AdminPanelColumnLabelConstants.USER_NAME));
+                successUserTrasaction.setMessage(rs.getString("update_banking_transactions"));
                 successUserTrasactionList.add(successUserTrasaction);
             }else{
 
-                failureUserTrasaction.setUserid(rs.getInt(AdminPanelColumnLabelConstants.USER_ID));
-                failureUserTrasaction.setUserName(rs.getString(AdminPanelColumnLabelConstants.USER_NAME));
+//                failureUserTrasaction.setUserid(rs.getInt(AdminPanelColumnLabelConstants.USER_ID));
+//                failureUserTrasaction.setUserName(rs.getString(AdminPanelColumnLabelConstants.USER_NAME));
                 failureUserTrasaction.setMessage(rs.getString(AdminPanelColumnLabelConstants.STATUS));
                 failureUserTrasactionList.add(failureUserTrasaction);
             }
