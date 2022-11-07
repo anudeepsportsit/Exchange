@@ -22,7 +22,7 @@ import java.util.List;
 @Repository
 public class DownlineListDaoImpl implements DownlineListDao {
 
-    private static final String PROC_GET_USER_DOWNLINE_LIST_DETAILS = "select * from get_user_downline_list_details(?,?)";
+    private static final String PROC_GET_USER_DOWNLINE_LIST_DETAILS = "select * from get_user_downline_list_details(?,?) limit 1";
     private static final String PROC_GET_USER_DOWNLINE_LIST_USER_BALANCE_DETAILS = "select * from get_user_downline_list_user_balance_details_v1(?,?)";
     private static final String PROC_SAVE_USER = "select * from save_user_details_v2(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String PROC_UPDATE_STATUS = "select * from update_user_status_v2(?,?,?,?)";
