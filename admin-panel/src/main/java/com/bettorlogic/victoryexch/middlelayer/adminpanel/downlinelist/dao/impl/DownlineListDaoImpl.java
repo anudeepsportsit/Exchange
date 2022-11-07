@@ -22,7 +22,7 @@ import java.util.List;
 @Repository
 public class DownlineListDaoImpl implements DownlineListDao {
 
-    private static final String PROC_GET_USER_DOWNLINE_LIST_DETAILS = "select * from get_user_downline_list_details(?,?) limit 1";
+    private static final String PROC_GET_USER_DOWNLINE_LIST_DETAILS = "select * from get_user_downline_list_details(?,?)";
     private static final String PROC_GET_USER_DOWNLINE_LIST_USER_BALANCE_DETAILS = "select * from get_user_downline_list_user_balance_details_v1(?,?)";
     private static final String PROC_SAVE_USER = "select * from save_user_details_v2(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String PROC_UPDATE_STATUS = "select * from update_user_status_v2(?,?,?,?)";
@@ -219,7 +219,7 @@ public class DownlineListDaoImpl implements DownlineListDao {
                 downLineUserDetails.setAccount(rs.getString(ColumnLabelConstants.USER_ACCOUNT));
                 downLineUserDetails.setAvailableBalance(rs.getDouble(ColumnLabelConstants.AVAILABLE_BALANCE));
                 downLineUserDetails.setPlayerBalance(rs.getDouble(ColumnLabelConstants.PLAYER_BALANCE));
-                downLineUserDetails.setCreditLimmit(rs.getDouble(ColumnLabelConstants.CREDIT_LIMIT));
+                downLineUserDetails.setCreditLimmit(1d);
                 downLineUserDetails.setExposure(rs.getDouble(ColumnLabelConstants.EXPOSURE));
                 downLineUserDetails.setExposureLimit(rs.getDouble(ColumnLabelConstants.EXPOSURE_LIMIT));
                 downLineUserDetails.setRoleId(rs.getInt(ColumnLabelConstants.ROLE_ID));
