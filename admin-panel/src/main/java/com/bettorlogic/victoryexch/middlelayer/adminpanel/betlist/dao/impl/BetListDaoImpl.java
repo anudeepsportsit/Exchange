@@ -28,7 +28,7 @@ public class BetListDaoImpl implements BetListDao {
     private static final String PROC_GET_BETS_SPORTS_CANCELLED = "select distinct * from get_betlist_sportwise_cancelled(?,?,?,?,?,?)";
     private static final String PROC_GET_BETS_SPORTS_VOIDED = "select distinct * from get_betlist_sportwise_voided(?,?,?,?,?,?)";
 
-    private static final String PROC_GET_BET_LIST_DETAILS = "select distinct * from get_betlist_v1(?,?,?,?,?,?,?)";
+    private static final String PROC_GET_BET_LIST_DETAILS = "select distinct * from get_betlist(?,?,?,?,?,?)";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -60,7 +60,7 @@ public class BetListDaoImpl implements BetListDao {
                     cs.setString(4, loginDetails.getFromDate());
                     cs.setInt(5, loginDetails.getBetStatus());
                     cs.setString(6, loginDetails.getToDate());
-                    cs.setArray(7,  connection.createArrayOf("INTEGER", userIds));
+//                    cs.setArray(7,  connection.createArrayOf("INTEGER", userIds));
                     return cs;
                 },
                 (CallableStatement cs) -> betListDetails(cs.executeQuery()));

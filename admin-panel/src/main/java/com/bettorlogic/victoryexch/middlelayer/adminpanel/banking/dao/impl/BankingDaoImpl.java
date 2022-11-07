@@ -116,7 +116,7 @@ public class BankingDaoImpl implements BankingDao {
             banking.setAvailableDW(rs.getBigDecimal(AdminPanelColumnLabelConstants.BANKING_AVAILABLE_BALANCE).setScale(2, BigDecimal.ROUND_FLOOR));
             banking.setExposure(rs.getBigDecimal(AdminPanelColumnLabelConstants.BANKING_USER_EXPOSURE).setScale(2, BigDecimal.ROUND_FLOOR));
             banking.setExposureLimit(rs.getBigDecimal(AdminPanelColumnLabelConstants.BANKING_EXPOSURE_LIMIT).setScale(2, BigDecimal.ROUND_FLOOR));
-            banking.setCreditLimit(rs.getBigDecimal(AdminPanelColumnLabelConstants.CREDIT_LIMIT)==null?null:rs.getBigDecimal(AdminPanelColumnLabelConstants.CREDIT_LIMIT).setScale(2,BigDecimal.ROUND_FLOOR));
+            banking.setCreditLimit(BigDecimal.valueOf(10000));
             bankingList.add(banking);
         }
         return bankingList;
