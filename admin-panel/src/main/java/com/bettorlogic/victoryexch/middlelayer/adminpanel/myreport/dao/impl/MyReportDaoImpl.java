@@ -100,7 +100,7 @@ public class MyReportDaoImpl implements MyReportDao {
                 totalStake = totalStake.add(sport.getStake());
                 totalPlyrPlSport = totalPlyrPlSport.add(sport.getPlyrPLSprt());
                 totalDwnPlSport = totalDwnPlSport.add(sport.getDwnPLsprt());
-                totalCommSport = totalCommSport.add(sport.getCommSprt());
+                totalCommSport = totalCommSport.add(sport.getCommSprt() == null ? BigDecimal.valueOf(0.0) : sport.getCommSprt());
                 totalUpPlSport = totalUpPlSport.add(sport.getUpPLSprt());
             }
             myImmediateUserDetailsTo.setTotStake(totalStake.setScale(2, RoundingMode.CEILING));
